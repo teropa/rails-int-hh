@@ -5,7 +5,19 @@ gem 'rails', '3.1.1'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+# Heroku needed gems
+gem 'heroku'
+gem 'execjs'
+gem 'therubyracer'
+
+# Heroku does not support SQLite, use PostgreSQL instead
+group :production do
+  gem 'pg'
+end
+
+group :development do
+  gem 'sqlite3'
+end
 
 gem 'json'
 
@@ -30,4 +42,6 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug'
+
+gem 'heroku'
 
