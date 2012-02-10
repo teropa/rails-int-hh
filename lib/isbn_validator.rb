@@ -32,6 +32,7 @@ class IsbnValidator < ActiveModel::Validator
   end
   
   def cleanup_isbn(isbn)
+    isbn = "" if isbn.nil?
     isbn.downcase.gsub(/-| /, "")
   end  
   

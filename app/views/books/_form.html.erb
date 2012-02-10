@@ -1,0 +1,29 @@
+<%= form_for @book do |f| %>
+  
+  <% unless @book.errors.empty? %>
+    <h2>Failed to save book</h2>
+    <% @book.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  <% end %>
+
+  <div>
+    Title:<br/>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    Authors:<br/>
+    <%= f.text_field :authors %>
+  </div>
+  <div>
+    ISBN:<br/>
+    <%= f.text_field :isbn %>
+  </div>
+  <div>
+    Description:<br/>
+    <%= f.text_area :description %>
+  </div>  
+  <%= f.submit "Save" %>
+  or
+  <%= link_to "Cancel", books_path %>
+<% end %>

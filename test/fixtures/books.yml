@@ -1,5 +1,29 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
+agile_web_development_with_rails:
+  title: Agile Web Development with Rails
+  authors: "Dave Thomas and David Heinemeier Hansson, with Leon Breedt, Mike Clark, James Duncan Davidson, Justin Gehtland, and Andreas Schwarz"
+  description: "Ruby on Rails helps you produce high-quality, beautiful-looking web applications quickly. You concentrate on creating the application, and Rails takes care of the details. Tens of thousands of developers have used this award-winning book to learn Rails. It’s a broad, far-reaching tutorial and reference that’s recommended by the Rails core team. If you’re new to Rails, you’ll get step-by-step guidance. If you’re an experienced developer, this book will give you the comprehensive, insider information you need."
+  isbn: 978-0-9776-1663-3
+  
+programming_ruby:
+  title: Programming Ruby 1.9
+  authors: "Dave Thomas, with Chad Fowler and Andy Hunt"
+  description: "Would you like to go from first idea to working code much, much faster? Do you currently spend more time satisfying the compiler instead of your clients or end users? Are you frustrated with demanding languages that seem to get in your way, instead of getting the work done? Are you using Rails, and want to dig deeper into the underlying Ruby language? If so, then we’ve got a language and book for you!"
+  isbn: 978-1-93435-608-1
+  
+rails_recipes:
+  title: "Rails Recipes: Rails 3 Edition"
+  authors: Chad Fowler
+  description: "Written for novice to intermediate Rails developers, Rails Recipes: Rails 3 Edition is packed with solutions to 70 of the most vexing problems you’re likely to face on the job. From building custom forms and powering pages with JQuery to integrating with legacy databases, it’s all here. Each recipe has been updated to reflect the latest features of Rails 3.1 and each lays out a distinctive solution to a problem you may be facing today or could well encounter tomorrow. In addition, you’ll find half the book is stocked with new eye-opening solutions to such common problems as how to extend Rails, test and deploy your sites, or add a web service to your actions. And each recipe not only lays out a succinct solution, but explains its rationale and the technologies that make it work."
+  isbn: 978-1-93435-677-7
+  
+command_line_applications_in_ruby:
+  title: Build Awesome Command-Line Applications in Ruby
+  authors: David Bryant Copeland
+  description: "As Ruby pro David Copeland explains, writing a command-line application that is self-documenting, robust, adaptable and forever useful is easier than you might think. Ruby is particularly suited to this task, since it combines high-level abstractions with “close to the metal” system interaction wrapped up in a concise, readable syntax. Moreover, Ruby has the support of a rich ecosystem of open-source tools and libraries."
+  isbn: 978-1-93435-691-3
+
 steppenwolf:
   title: Steppenwolf
   authors: Hermann Hesse
