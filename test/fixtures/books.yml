@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+steppenwolf:
+  title: Steppenwolf
+  authors: Hermann Hesse
+  description: A great book
+  isbn: 951-98548-9-4
