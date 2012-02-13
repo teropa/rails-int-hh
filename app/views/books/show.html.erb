@@ -1,5 +1,11 @@
 <h1><%= @book.title %></h1>
 
+<% if @book_reservation %>
+  <span class="label important">Reserved by <%= @book_reservation.email %></span>
+<% else %>
+  <span class="label success">Free</span>
+<% end %>
+
 <p>
 	by <%= @book.authors %>
 </p>
@@ -14,6 +20,12 @@
 
 <%= link_to "Edit", edit_book_path(@book) %>
 <%= link_to "Delete", book_path, method: :delete %>
+
+<% if @book_reservation %>
+  <%= link_to "Free", free_book_reservation_path(@book, @book_reservation), method: :put %>
+<% else %>
+  <%= link_to "Reserve", new_book_reservation_path(@book) %>
+<% end %>
 
 <p>
   <%= link_to "Back to list", books_path %>

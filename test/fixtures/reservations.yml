@@ -1,0 +1,9 @@
+free:
+  book_id: 1
+  state: free
+  email: library@eficode.com
+
+reserved:
+  book_id: 1
+  state: reserved
+  email: library@eficode.com
