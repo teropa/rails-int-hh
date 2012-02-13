@@ -6,6 +6,15 @@ class BooksController < ApplicationController
     @books = Book.all
   end
   
+  def search
+    @books = case params[:by]
+      when 'isbn'    then Book.search_by_isbn(params[:query])
+      when 'authors' then Book.search_by_authors(params[:query])
+      else                Book.search_by_title(params[:query])
+    end
+    render action: :index
+  end
+  
   def show
     @book_reservation = @book.reservation
   end

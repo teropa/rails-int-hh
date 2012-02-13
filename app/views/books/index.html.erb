@@ -1,14 +1,28 @@
 <h1>Books</h1>
 
+<%= form_tag search_books_path, method: :get do %>
+  <%= text_field_tag :query, params[:query] || 'Search by title' %>
+  <%= submit_tag 'Search' %>
+  <div>
+    <%= query_by_radio_tag :title %>
+    <%= query_by_radio_tag :isbn %>
+    <%= query_by_radio_tag :authors %>
+  </div>
+<% end %>
+
 <p>
   <%= link_to "Add a book", new_book_path %>
 </p>
 
-<ul>
+<% if @books.size > 0 %>
+  <ul>
   <% @books.each do |book| %>
     <li>
       <strong><%= link_to book.title, book_path(book) %></strong>
       by <%= book.authors %>
     </li>
   <% end %>
-</ul>
+  </ul>
+<% else %>
+  <h2>Sorry, we haven't found any books!</h2>
+<% end %>
