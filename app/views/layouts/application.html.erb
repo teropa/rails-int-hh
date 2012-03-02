@@ -8,12 +8,27 @@
 </head>
 <body>
   
-<% flash.each do |name,msg| %>
-  <div class="flash_<%=name%>">
-    <%= msg %>
+  <div class="container main">
+    
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <%= link_to root_path, class: 'brand' do %>
+            <%= image_tag "books.png", width: '20px' %>  
+            Library
+          <% end %>
+        </div>
+      </div>
+    </div>
+  
+    <% flash.each do |name,msg| %>
+      <div class="flash_<%=name%>">
+        <%= msg %>
+      </div>
+    <% end %>
+    <%= yield %>
+  
   </div>
-<% end %>
-<%= yield %>
 
 </body>
 </html>
