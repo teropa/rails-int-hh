@@ -23,7 +23,7 @@
 <% if @book_reservation %>
   <%= link_to "Free", free_book_reservation_path(@book, @book_reservation), method: :put, class: 'btn' %>
 <% else %>
-  <%= link_to "Reserve", new_book_reservation_path(@book), class: 'btn' %>
+  <%= link_to "Reserve", new_book_reservation_path(@book), class: 'btn', remote: true %>
 <% end %>
 
 <%= link_to "Delete", book_path, method: :delete, class: 'btn btn-danger' %>
@@ -31,3 +31,7 @@
 <p>
   <%= link_to "Back to list", books_path %>
 </p>
+
+
+<div id="reservation-form" style="display: none;">
+</div>

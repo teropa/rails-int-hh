@@ -3,6 +3,10 @@ class ReservationsController < ApplicationController
   def new
     @book = Book.find(params[:book_id])
     @reservation = @book.reservations.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
   
   def create
