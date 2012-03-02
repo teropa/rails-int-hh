@@ -1,4 +1,4 @@
-<h1>Books</h1>
+<h1><%= image_tag "books.png" %> Books</h1>
 
 <%= form_tag search_books_path, method: :get do %>
   <%= text_field_tag :query, params[:query] || 'Search by title' %>
