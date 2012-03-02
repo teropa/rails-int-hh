@@ -1,10 +1,8 @@
 <h1><%= @book.title %></h1>
 
-<% if @book_reservation %>
-  <span class="label important">Reserved by <%= @book_reservation.email %></span>
-<% else %>
-  <span class="label success">Free</span>
-<% end %>
+<div id="reservation-status">
+  <%= render partial: "reservation_status", locals: {reservation: @book_reservation} %>
+</div>
 
 <p>
 	by <%= @book.authors %>
@@ -20,11 +18,9 @@
 
 <%= link_to "Edit", edit_book_path(@book), class: 'btn' %>
 
-<% if @book_reservation %>
-  <%= link_to "Free", free_book_reservation_path(@book, @book_reservation), method: :put, class: 'btn' %>
-<% else %>
-  <%= link_to "Reserve", new_book_reservation_path(@book), class: 'btn', remote: true %>
-<% end %>
+<span id="reservation-links">
+  <%= render partial: "reservation_links", locals: {book: @book, reservation: @book_reservation} %>
+</span>
 
 <%= link_to "Delete", book_path, method: :delete, class: 'btn btn-danger' %>
 

@@ -1,0 +1,3 @@
+$('#reservation-form').hide();
+$('#reservation-status').html("<%=j render partial: "books/reservation_status", locals: {reservation: @reservation} %>");
+$('#reservation-links').html('<%=j render partial: "books/reservation_links", locals: {book: @book, reservation: @reservation} %>');
