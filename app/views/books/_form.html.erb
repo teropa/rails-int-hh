@@ -1,29 +1,53 @@
-<%= form_for @book do |f| %>
+<%= form_for @book, html: { class: 'form-horizontal' } do |f| %>
   
   <% unless @book.errors.empty? %>
-    <h2>Failed to save book</h2>
-    <% @book.errors.full_messages.each do |msg| %>
-      <p><%= msg %></p>
-    <% end %>
+    <div class='alert alert-block alert-error'>
+      <h2 class='alert-heading'>Failed to save book</h2>
+      <% @book.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+      <% end %>
+    </div>
   <% end %>
 
-  <div>
-    Title:<br/>
-    <%= f.text_field :title %>
-  </div>
-  <div>
-    Authors:<br/>
-    <%= f.text_field :authors %>
-  </div>
-  <div>
-    ISBN:<br/>
-    <%= f.text_field :isbn %>
-  </div>
-  <div>
-    Description:<br/>
-    <%= f.text_area :description %>
-  </div>  
-  <%= f.submit "Save" %>
-  or
-  <%= link_to "Cancel", books_path %>
+  <fieldset>
+    <div class='control-group'>
+      <label class='control-label' for="title">Title</label>
+      <div class='controls'>
+        <%= f.text_field :title %>
+      </div>
+  </fieldset>
+  
+  <fieldset>
+    <div class='control-group'>
+      <label class='control-label' for="authors">Authors</label>
+      <div class='controls'>
+        <%= f.text_field :authors %>
+      </div>
+  </fieldset>
+  
+  <fieldset>
+    <div class='control-group'>
+      <label class='control-label' for="isbn">ISBN</label>
+      <div class='controls'>
+        <%= f.text_field :isbn %>
+      </div>
+  </fieldset>
+
+  <fieldset>
+    <div class='control-group'>
+      <label class='control-label' for="description">Description</label>
+      <div class='controls'>
+        <%= f.text_field :description %>
+      </div>
+  </fieldset>
+
+  <fieldset>
+    <div class='controls'>
+      <%= f.submit "Save", class: 'btn-primary' %>
+      or
+      <%= link_to "Cancel", books_path %>
+    </div>
+  </fieldset>
+  
+  
 <% end %>

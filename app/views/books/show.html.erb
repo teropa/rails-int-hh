@@ -18,14 +18,15 @@
 	<%= @book.description %>
 </p>
 
-<%= link_to "Edit", edit_book_path(@book) %>
-<%= link_to "Delete", book_path, method: :delete %>
+<%= link_to "Edit", edit_book_path(@book), class: 'btn' %>
 
 <% if @book_reservation %>
-  <%= link_to "Free", free_book_reservation_path(@book, @book_reservation), method: :put %>
+  <%= link_to "Free", free_book_reservation_path(@book, @book_reservation), method: :put, class: 'btn' %>
 <% else %>
-  <%= link_to "Reserve", new_book_reservation_path(@book) %>
+  <%= link_to "Reserve", new_book_reservation_path(@book), class: 'btn' %>
 <% end %>
+
+<%= link_to "Delete", book_path, method: :delete, class: 'btn btn-danger' %>
 
 <p>
   <%= link_to "Back to list", books_path %>
