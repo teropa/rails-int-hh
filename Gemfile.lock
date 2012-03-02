@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
+  revision: 2b119e7a83f34202b6ea7f61cd3da59b170ebdd8
+  branch: static
+  specs:
+    twitter-bootstrap-rails (2.0.1)
+      actionpack
+      railties
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -133,4 +142,5 @@ DEPENDENCIES
   sass-rails (~> 3.1.4)
   sqlite3
   therubyracer
+  twitter-bootstrap-rails!
   uglifier (>= 1.0.3)
