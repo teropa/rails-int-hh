@@ -1,0 +1,19 @@
+<%= form_for [@book, @reservation], remote: remote do |f| %>
+
+  <% unless @reservation.errors.empty? %>
+    <h2>Failed create reservation book</h2>
+    <% @reservation.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  <% end %>
+
+  <div>
+    Email:<br/>
+    <%= f.text_field :email %>
+  </div>
+
+  <%= f.submit "Save" %>
+  or
+  <%= link_to "Cancel", book_path(@book) %>
+
+<% end %>

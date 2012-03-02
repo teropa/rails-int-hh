@@ -1,21 +1,3 @@
 <h1>New reservation for "<%= @book.title %>"</h1>
 
-<%= form_for [@book, @reservation] do |f| %>
-
-  <% unless @reservation.errors.empty? %>
-    <h2>Failed create reservation book</h2>
-    <% @reservation.errors.full_messages.each do |msg| %>
-      <p><%= msg %></p>
-    <% end %>
-  <% end %>
-
-  <div>
-    Email:<br/>
-    <%= f.text_field :email %>
-  </div>
-
-  <%= f.submit "Save" %>
-  or
-  <%= link_to "Cancel", book_path(@book) %>
-
-<% end %>
+<%= render partial: 'form', locals: { remote: true } %>
