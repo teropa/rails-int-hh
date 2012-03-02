@@ -4,6 +4,10 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
+    respond_to do |format|
+      format.html
+      format.xml { render xml: @books.to_xml }
+    end
   end
   
   def search

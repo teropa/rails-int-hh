@@ -8,6 +8,11 @@ class BooksControllerTest < ActionController::TestCase
     assert assigns(:books)
   end
   
+  test "book listing in XML" do
+    get :index, format: :xml
+    assert_response :success
+  end
+  
   test "show book" do
     get :show, id: books(:steppenwolf).id
 
