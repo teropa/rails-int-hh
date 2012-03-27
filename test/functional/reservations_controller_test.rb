@@ -3,9 +3,9 @@ require 'test_helper'
 class ReservationsControllerTest < ActionController::TestCase
   
   setup do
-    @book          = books(:steppenwolf)
-    @reserved_book = books(:rails_recipes)
-    @reservation   = Reservation.create(book: @reserved_book, email: 'library@eficode.com')
+    @book          = Factory(:book)
+    @reserved_book = Factory(:book)
+    @reservation   = Factory(:reservation, book: @reserved_book, state: 'reserved')
   end
   
   test "new reservation" do

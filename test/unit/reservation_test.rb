@@ -3,11 +3,7 @@ require 'test_helper'
 class ReservationTest < ActiveSupport::TestCase
 
   setup do
-    @new_reservation = Reservation.new(
-        book_id: books(:steppenwolf).id,
-        email: 'library@eficode.com',
-        state: 'free'
-        )
+    @new_reservation = Factory.build(:reservation)
   end
   
   test "should not save reservation without a book_id" do
@@ -37,7 +33,7 @@ class ReservationTest < ActiveSupport::TestCase
   end
   
   test "should not allow reservation if the book already reserved" do
-    reservation = reservations(:reserved)
+    reservation = Factory(:reservation, state: 'reserved')
     copy = Reservation.new(reservation.attributes)
     assert !copy.save
     assert_match /book has been already reserved/, copy.errors[:book_id].join

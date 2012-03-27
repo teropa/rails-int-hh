@@ -46,3 +46,13 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 
 gem 'heroku'
 
+group :test do
+	gem 'factory_girl_rails', '~> 1.7'
+	gem 'guard-test'
+	gem 'shoulda'
+end
+
+
+
+
+
