@@ -2,6 +2,9 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
 
+gem 'ruby-prof', :git => 'git://github.com/wycats/ruby-prof.git'
+gem 'test-unit'
+
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
